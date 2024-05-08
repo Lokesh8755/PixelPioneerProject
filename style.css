@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    line-height:1.6;
+}
+
+h1{
+    font-size:36px;
+    font-weight:bold;
+    text-align:center;
+    margin:40px 0 60px 0;
+}
+form{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:60px;
+}
+
+#search-input{
+    width:60%;
+    max-width:400px;
+    padding:10px 20px;
+    border:none;    
+    box-shadow:0 0 6px rgb(0,0,0.2);
+    font-size:18px;
+    border-radius:5px;
+    color:#333;
+}
+#search-input:hover{
+    border: 2px solid orange;
+}
+#search-button{
+    padding:10px 25px;
+    margin-left:10px;
+    border-radius:5px;  
+    border:none;
+    box-shadow: 0 0 6px rgb(0,0,0.2);
+    background-color:#138065;
+    cursor:pointer;
+    color:white;
+}
+
+.search-results{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    max-width:1200px;
+    margin:0 auto;
+}
+.search-result{
+    width:30%;
+    height:30rem;
+    margin-bottom:60px;
+    box-shadow: 0 0 6px rgb(0,0,0.2);
+    border-radius:5px;
+    overflow:hidden;/*The overflow property in CSS is used to control the visibility of content that overflows the boundaries of an HTML element. It specifies whether to clip content or to add scrollbars when an element’s content is too big to fit in a specified area*/
+}
+.search-result img {
+    width:100%;
+    height:400px;/*firstly did 100% so all images were in unequal sizes*/
+    object-fit:cover;  
+    transition: opacity 0.2s ease-in-out; 
+}
+.search-result:hover img{
+    opacity:70%;
+}
+.search-result a{
+    font-size:20px;
+    text-decoration:none;
+    color:#333;
+    display:block;
+    padding:10px;
+    text-transform:capitalize;/*capitalizes the first letter of each word in a text.*/
+}
+#show-more-button{
+    background-color:#008cba;
+    font-size:18px;
+    border:none;
+    color:#fff;
+    padding:10px 20px;
+    text-align:center;
+    display:block;
+    margin:30px auto;
+    border-radius:5px;
+    cursor:pointer;
+    display:none;/* display none se button show nahi hoga, we hide bcz when we search something tabhi visible hona h ise*/
+}
+
+/* will use media queries to make our web responsive*/
+
+@media screen and (max-width:768px){ /*it is a tablet size*/
+    .search-results{
+       padding:20px; 
+    }
+    .search-result{
+        width:45%;
+    }
+}
+
+@media screen and (max-width:480px){
+    .search-result{ /* mobile phone size*/
+        width:100%;
+    }
+}
